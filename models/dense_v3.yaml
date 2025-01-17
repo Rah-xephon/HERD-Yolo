@@ -1,0 +1,39 @@
+# 注：废案，训练的版本与V2一致
+nc: 3  # number of classes
+depth_multiple: 1.0  # model depth multiple
+width_multiple: 1.0  # layer channel multiple
+anchors:
+  - [10,14, 23,27, 37,58]  # P4/16
+  - [81,82, 135,169, 344,319]  # P5/32
+
+# YOLOv3-tiny backbone
+backbone:
+  # [from, number, module, args]
+  # args: [input_channels , , , ......]
+  [[-1, 1, Conv_1, [32, 7, 2]],  # 0
+   [-1, 1, Conv_1, [64, 3, 2]], #1
+   [-1, 1, CSP_DenseBlock, [64, 16, 4]],
+   [-1, 1, Pools, [2,2]],
+   [-1, 1, BasicBlock_2, [128, 3, 2]], #4
+   [-1, 1, CSP_DenseBlock, [128, 16, 8]],
+   [-1, 1, Pools, [2,2]], 
+   [-1, 1, BasicBlock_2, [256, 3, 2]], # 7
+   [-1, 1, CSP_DenseBlock, [256, 16, 16]],
+   [-1, 1, Pools, [2,2]],
+   [-1, 1, BasicBlock_2, [512, 3, 2]],
+   [-1, 1, Conv_1, [512, 3, 1]],  #11
+  ]
+
+ # YOLOv3-tiny head
+head:
+  [[-1, 1, Conv_1, [512, 3, 1]], #12
+   [-1, 1, Conv_1, [256, 3, 1]], #13
+   [-1, 1, Conv_1, [256, 1, 1]], #14
+   
+   [12, 1, Sample, [None, 2, 'nearest']],
+   [[-1, 7], 1, Concat, [2]],  # cat backbone P4
+   [-1, 1, Conv_1, [256, 3, 1]],  # 16 (P4/16-medium)
+   [-1, 1, Conv_1, [256, 1, 1]], #17
+
+   [[17, 14], 1, Detect, [nc, anchors]],  # Detect(P4, P5)
+  ] 
