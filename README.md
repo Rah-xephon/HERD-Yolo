@@ -9,7 +9,7 @@
 
 
 
-## <div align="center"></div>
+## <div align="center">HERD-YOLO: an energy-efficient and comprehensive garbage bin overflow detection model based on spiking neural networks</div>
 </div>
 
 ### Requirements
@@ -65,4 +65,3 @@ python calculate_fr.py
 YOLOv3 is a collection of object detection models pretrained on the COCO dataset, reflecting Ultralytics' open-source exploration into future vision AI techniques. EMS-YOLO is integrated into this framework as well. As an outstanding model in the spiking neural network domain, EMS-YOLO's open-source framework has been utilized in the HERD-YOLO project. We greatly appreciate the research efforts behind EMS-YOLO and kindly ask that you cite their work when applicable.
  <b>We greatly appreciate the research efforts behind EMS-YOLO（[BICLab/EMS-YOLO: Offical implementation of "Deep Directly-Trained Spiking Neural Networks for Object Detection" (ICCV2023)](https://github.com/BICLab/EMS-YOLO)） and kindly ask that you cite their work when applicable.</b>
 </p>
-
