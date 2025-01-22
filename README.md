@@ -9,19 +9,19 @@
 
 
 
-## <div align="center">Deep Directly-Trained Spiking Neural Networks for Object Detection [(ICCV2023)](https://openaccess.thecvf.com/content/ICCV2023/html/Su_Deep_Directly-Trained_Spiking_Neural_Networks_for_Object_Detection_ICCV_2023_paper.html)</div>
+## <div align="center"></div>
 </div>
 
 ### Requirements
 
-The code has been tested with pytorch=1.10.1,py=3.8, cuda=11.3, cudnn=8.2.0_0 . The conda environment can be copied directly via <b>environment.yml</b>. Some additional dependencies can be found in the  <b>environment.txt</b>.
+The code has been validated using pytorch 1.10.1, Python 3.8, CUDA 11.3, and cuDNN 8.2.0_0. You can directly replicate the conda environment using the **environment.yml** file. Additional dependencies are listed in the **environment.txt**.
 
 
 <details open>
 <summary>Install</summary>
 
 ```bash
-$ git clone https://github.com/BICLab/EMS-YOLO.git
+$ git clone https://github.com/Rah-xephon/HERD-Yolo.git
 $ pip install -r requirements.txt
 ```
 
@@ -29,26 +29,18 @@ $ pip install -r requirements.txt
 
 ### Pretrained Checkpoints
 
-We provide the best and the last trained model based on EMS-Res34 on the COCO dataset.
-
-`detect.py` runs inference on a variety of sources, downloading models automatically from
-the [COCO_EMS-ResNet34](https://drive.google.com/drive/folders/1mry8sdED6ncqxajmQROKBECpcrmXStpB?usp=sharing) .
+We provide the best and the last trained model based on HERD-YOLO on the GBS dataset.
 
 The relevant parameter files are in the `runs/train`.
 
 
-### Training & Addition
+### Training & Spiking Rate
 <details open>
 <summary>Train</summary>
 
-The relevant code for the Gen1 dataset is at `/g1-resnet`. It needs to be replaced or added to the appropriate root folder.
+You can get our GBS dataset from：[the Garbage Bin Status (GBS) Dataset](https://zenodo.org/records/14711706)
 
-For gen1 dataset:
-
-```python
-python path/to/train_g1.py --weights ***.pt --img 640
-```
-For coco dataset:
+For training
 ```python
 python train.py
 ```
@@ -66,19 +58,12 @@ python calculate_fr.py
 
 
 ```shell
-@inproceedings{su2023deep,
-  title={Deep Directly-Trained Spiking Neural Networks for Object Detection},
-  author={Su, Qiaoyi and Chou, Yuhong and Hu, Yifan and Li, Jianing and Mei, Shijie and Zhang, Ziyang and Li, Guoqi},
-  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
-  pages={6555--6565},
-  year={2023}
-}
+
 ```
 
 <p>
-YOLOv3  is a family of object detection architectures and models pretrained on the COCO dataset, and represents <a href="https://ultralytics.com">Ultralytics</a>
- open-source research into future vision AI methods, incorporating lessons learned and best practices evolved over thousands of hours of research and development. 
- 
- <b>Our code is also implemented in this framework, so please remember to cite their work.</b>
+YOLOv3 is a collection of object detection models pretrained on the COCO dataset, reflecting Ultralytics' open-source exploration into future vision AI techniques. EMS-YOLO is integrated into this framework as well. As an outstanding model in the spiking neural network domain, EMS-YOLO's open-source framework has been utilized in the HERD-YOLO project. We greatly appreciate the research efforts behind EMS-YOLO and kindly ask that you cite their work when applicable.
+
+ <b>We greatly appreciate the research efforts behind EMS-YOLO and kindly ask that you cite their work when applicable.</b>
 </p>
 
