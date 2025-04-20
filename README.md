@@ -33,13 +33,14 @@ We provide the best and the last trained model based on HERD-YOLO on the GBS dat
 
 The relevant parameter files are in the `runs/train`.
 
+### Dataset
+
+You can get our GBS dataset from：[the Garbage Bin Status (GBS) Dataset](https://zenodo.org/records/14711706)
+
 
 ### Training & Spiking Rate
 <details open>
 <summary>Train</summary>
-
-You can get our GBS dataset from：[the Garbage Bin Status (GBS) Dataset](https://zenodo.org/records/14711706)
-
 For training
 ```python
 python train.py
@@ -54,11 +55,21 @@ Dependencies can be downloaded from [Visualizer](https://github.com/luo3300612/V
 python calculate_fr.py
 ```
 
-### Contact Information
+### Citation
 
 
 ```shell
-
+@Article{smartcities8020071,
+AUTHOR = {Yang, Liwen and Zha, Xionghui and Huang, Jin and Liu, Zhengming and Chen, Jiaqi and Mou, Chaozhou},
+TITLE = {Energy-Efficient and Comprehensive Garbage Bin Overflow Detection Model Based on Spiking Neural Networks},
+JOURNAL = {Smart Cities},
+VOLUME = {8},
+YEAR = {2025},
+NUMBER = {2},
+ARTICLE-NUMBER = {71},
+URL = {https://www.mdpi.com/2624-6511/8/2/71},
+ISSN = {2624-6511}
+}
 ```
 
 <p>
